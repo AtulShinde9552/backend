@@ -52,7 +52,7 @@ exports.login = async (req, res) => {
     );
 
     if (!passwordMatched) {
-      return res.status(400).send({ message: "wrong password" });
+      return res.status(400).send({ message: "Wrong password" });
     }
 
     const jwtToken = jwt.sign(
@@ -71,9 +71,9 @@ exports.login = async (req, res) => {
       sameSite: "lax",
     });
 
-    return res.status(200).send({ existingUser, jwtToken });
+    return res.status(200).send({ message: "Login successful", token: jwtToken });
   } catch (error) {
-    return res.status(500).send({ message: "Error log in!", error: error });
+    return res.status(500).send({ message: "Error logging in!", error: error });
   }
 };
 
