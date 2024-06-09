@@ -11,5 +11,5 @@ app.use("/user", UserAuthRouter);
 
 dbConnect();
 app.listen(4000, () => {
-  console.log("http://localhost:4000");
+  console.log("http://localhost:8000");
 });
